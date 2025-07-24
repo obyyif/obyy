@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator Sederhana</title>
+  <link rel="stylesheet" href="aku.css">
+</head>
+<body>
+   <div class="container">
+        <h2>HTML Kalkulator</h2>
+        <label for="bil1">Bilangan 1 :<br></label>
+        <input type="number" id="bil1" name="bil1"/>
+
+       <label for="bil2"><br>Bilangan 2 :<br></label>
+        <input type="number" id="bil2" name="bil2" />
+        <label for="operasi"><br>Pilih Operasi:</label>
+        <select id="operasi" onchange="updateInputVisibility()">
+            <option value="penjumlahan">Penjumlahan</option>
+            <option value="pengurangan">Pengurangan</option>
+            <option value="perkalian">Perkalian</option>
+            <option value="pembagian">Pembagian</option>
+            <option value="eksponen">Eksponen</option>
+            <option value="modulus">Modulus</option>
+            <option value="increment">Increment</option>
+            <option value="decrement">Decrement</option>
+        </select>
+        <button class="satu" onclick="hitung()">Hitung</button>
+        <span id="hasil"></span>
+    </div>
+
+  <script src="aku.js"></script>
+</body>
+</html>

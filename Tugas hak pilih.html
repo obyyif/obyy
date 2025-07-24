@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cek Hak Pilih</title> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f39c12;
+    --background-color: #f0f4f8;
+    --text-color: #333;
+    --input-bg: #ffffff;
+    --input-border: #e1e8ed;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(15, 99, 62, 0.46) 0%, rgba(216, 241, 230, 0.46) 50.2%, rgba(131, 85, 85, 0.46) 50.3%, rgba(27, 8, 8, 0.46) 100%),
+        radial-gradient(circle at 85% 85%, rgba(216, 241, 230, 0.46) 0%, rgba(65, 131, 102, 0.46) 50.2%, rgba(10, 9, 9, 0.46) 50.3%, rgba(255,255,255, 0.46) 100%);
+    background-size: 100% 100%;
+}
+
+.container {
+    background-color: var(--input-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: var(--input-bg);
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #3a7bc8;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.result.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.result.eligible {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.result.not-eligible {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+i {
+    margin-right: 8px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px;
+    }
+}
+    </style>
+</head>
+<body>
+    <h1>Cek Hak Pilih</h1>
+    <label for="umur">Umur:</label>
+    <input type="number" id="umur">
+    <br>
+    <label for="status">Status Pernikahan:</label>
+    <select id="status">
+        <option value="menikah">Menikah</option>
+        <option value="belum">Belum Menikah</option>
+    </select>
+    <br>
+    <button onclick="cekHakPilih()">Cek</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekHakPilih() {
+    // Ambil nilai dari input
+    let umur = document.getElementById("umur").value;
+    let status = document.getElementById("status").value;
+
+    // Konversi umur menjadi angka
+    umur = parseInt(umur);
+
+    // Cek kondisi hak pilih menggunakan operator OR (||)
+    if (umur >= 17 || status === "menikah") {
+        alert("Anda memiliki Hak Pilih");
+    } else {
+        alert("Anda tidak memiliki Hak Pilih");
+    }
+}
+    </script>
+</body>
+</html>

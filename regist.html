@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola User</title>
+    <style>
+    /* css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: black;
+    margin: 0;
+    
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: black;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: #555;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form input:focus, form select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffcbdb;
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #ffcbdb;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+input[type="search"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="search"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kelola User</h1>
+        <div class="form-container">
+            <form id="userForm">
+                <label for="tipeUser">Tipe User</label>
+                <select id="tipeUser" name="tipeUser">
+                    <option value="Gudang">Gudang</option>
+                    <option value="Kasir">Kasir</option>
+                </select>
+
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama">
+
+                <label for="telepon">Telepon</label>
+                <input type="text" id="telepon" name="telepon" placeholder="Telepon">
+
+                <label for="alamat">Alamat</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Alamat">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Username">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password">
+
+                <button type="button" id="tambahBtn">Tambah</button>
+                <button type="button" id="editBtn">Edit</button>
+                <button type="button" id="hapusBtn">Hapus</button>
+            </form>
+        </div>
+         <div class="search">
+                <input type="text" placeholder="Cari user">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id User</th>
+                        <th>Tipe User</th>
+                        <th>Nama User</th>
+                        <th>Alamat</th>
+                        <th>Telepon</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4532</td>
+                        <td>Gudang</td>
+                        <td>Obyyif</td>
+                        <td>Garut</td>
+                        <td>0812345</td>
+                    </tr>
+                    <tr>
+                        <td>9875</td>
+                        <td>Kasir</td>
+                        <td>oby.inthesky</td>
+                        <td>Garut</td>
+                        <td>0812312</td>
+                    </tr>
+                    <tr>
+                        <td>8764</td>
+                        <td>Kasir</td>
+                        <td>obaayy</td>
+                        <td>Bandung</td>
+                        <td>0812987</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
